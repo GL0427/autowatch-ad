@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AutoWatch AD</string>
+    <string name="accessibility_service_label">AutoWatch AD 自动看广告</string>
+    <string name="accessibility_service_description">用于监听 com.luna.music 的窗口状态与内容变化，检测到广告时辅助点击跳过按钮</string>
+</resources>
