@@ -287,7 +287,7 @@ public class AdWatchService extends AccessibilityService {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 createChannel();
                 Notification notification = new Notification.Builder(this, CHANNEL_ID)
-                        .setSmallIcon(android.R.drawable.stat_sys_check_mark)
+                        .setSmallIcon(android.R.drawable.ic_dialog_info)
                         .setContentTitle("AutoWatch AD")
                         .setContentText("30 天周期已完成")
                         .setAutoCancel(true)
