@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="AutoWatch AD"
+        android:label="@string/app_name"
         android:supportsRtl="true">
 
         <activity
