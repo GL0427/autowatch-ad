@@ -4,4 +4,4 @@
     android:notificationTimeout="100"
     android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged"
     android:packageNames="com.luna.music"
-    android:description="用于监听 com.luna.music 的窗口状态与内容变化，检测到广告时辅助点击跳过按钮" />
+    android:description="@string/accessibility_service_description" />
