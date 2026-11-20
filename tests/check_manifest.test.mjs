@@ -60,7 +60,13 @@ test('Accessibility config enables window content, timeout and target package', 
   assert.ok(packages.split(/[,\s]+/).includes('com.luna.music'), 'must target com.luna.music');
 });
 
-test('Accessibility config has a Chinese description', () => {
+test('Accessibility config uses a string resource description with Chinese text', () => {
   const description = attr(config, 'description') ?? '';
-  assert.match(description, /[\u4e00-\u9fff]/, 'description must contain Chinese text');
+  assert.match(description, /^@string\//, 'description must be a @string/ resource reference (AAPT requires it)');
+  const stringsPath = resolve(root, 'app/src/main/res/values/strings.xml');
+  const stringsXml = readFileSync(stringsPath, 'utf8');
+  const resName = description.replace('@string/', '');
+  const entry = new RegExp(`<string\\s+name="${resName}"[^>]*>([\\s\\S]*?)<\\/string>`).exec(stringsXml);
+  assert.ok(entry, `strings.xml must define ${resName}`);
+  assert.match(entry[1], /[\u4e00-\u9fff]/, 'description resource must contain Chinese text');
 });
